@@ -1,0 +1,27 @@
+set instance r2d2 robot
+set instance c3p0 robot
+set instance Xwing spaceship
+set instance milleniumFalcon spaceship
+set instance Naboo planet
+set instance Kessel planet
+set instance Tatooine planet
+set instance Alderaan planet
+
+set predicate (robotAt r2d2 Naboo)
+set predicate (robotAt c3p0 Tatooine)
+set predicate (spaceshipAt milleniumFalcon Alderaan)
+set predicate (spaceshipAt Xwing Kessel)
+set predicate (spaceshipFree Xwing)
+set predicate (spaceshipFree milleniumFalcon)
+
+set goal (and(allOk r2d2) (allOk c3p0) (robotAt r2d2 Tatooine) (robotAt c3p0 Naboo))
+
+
+
+
+
+
+
+
+
+

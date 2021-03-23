@@ -53,9 +53,10 @@ Enter to LPGTD-Plan and write:
 ## Creating our pluing
 
 To import plg-td pluing to plansys2, first you need to have ros2_planning_system implemented in your ros2 workspace.
-You can clone this repository from https://github.com/IntelligentRoboticsLabs/ros2_planning_system
 
-Clone this repository and add `plansys2_lpgtd_plan_solver` to `ros2_planning_system`.
+Clone this repository from https://github.com/IntelligentRoboticsLabs/ros2_planning_system
+
+Add `plansys2_lpgtd_plan_solver` to `ros2_planning_system`.
 
 Install all the necessary dependencies using `rosdep` and compile your workspace with `colcon build`.
 

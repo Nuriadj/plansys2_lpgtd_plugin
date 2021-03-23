@@ -1,4 +1,4 @@
-// Copyright 2021 Winx2
+// Copyright 2021 Winx2: Roxana Aanei, Nuria Diaz, Veronica Tornero and Irene Bandera.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.

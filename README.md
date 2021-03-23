@@ -87,6 +87,8 @@ Run `get plan` and the solution will appear in your terminal.
 
 You can use some examples of pddl format in the directory `examples`.
 
+----------------------------------------------------------------------
+
 However, you may encounter some problems when using the executable. 
 
 Even though the executable is in the appropiate folder, you might have this problem when running ./lpgtd:

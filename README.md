@@ -103,9 +103,12 @@ To run the executable you need to install libc6:i386, libncurses5:i386 and libst
 
 After typing these lines on a terminal, you should be able to use the executable.
 
-## Contributors
+## Contributors and github users
 
 Nuria Díaz: @Nuriadj
+
 Roxana Aanei: @RoxanaAN
+
 Verónica Tornero: @Veronica274
+
 Irene Bandera: @irenebm

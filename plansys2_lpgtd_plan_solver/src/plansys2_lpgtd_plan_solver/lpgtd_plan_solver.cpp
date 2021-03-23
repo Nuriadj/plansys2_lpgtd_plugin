@@ -56,7 +56,7 @@ LPGTDPlanSolver::getPlan(
   problem_out.close();
 
   system(
-    ("~/bin/lpgtd -o /tmp/" + node_namespace + "/domain.pddl -f /tmp/" +
+    ("$LPGTD -o /tmp/" + node_namespace + "/domain.pddl -f /tmp/" +
     node_namespace + "/problem.pddl -speed -noout > /tmp/" + node_namespace + "/plan").c_str());
 
   std::string line;
@@ -122,7 +122,7 @@ LPGTDPlanSolver::check_domain(
   problem_out.close();
 
   system(
-    ("/bin/lpgtd-o /tmp/" + node_namespace + "/check_domain.pddl -f /tmp/" +
+    ("$LPGTD-o /tmp/" + node_namespace + "/check_domain.pddl -f /tmp/" +
     node_namespace + "/check_problem.pddl -speed -noout > /tmp/" + node_namespace + "/check.out").c_str());
 
   std::ifstream plan_file("/tmp/" + node_namespace + "/check.out");

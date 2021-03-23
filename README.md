@@ -48,7 +48,7 @@ Clone this repository and decompress LPGTD-Plan.
 
 Enter to LPGTD-Plan and write:
 
-    cp ./lpgtd ~/bin/LPGTD-Plan/lpgtd
+    cp ./lpgtd ~/bin/lpgtd
 
 ## Creating our pluing
 

@@ -1,4 +1,4 @@
-// Copyright 2021 Winx2
+// Copyright 2021 Winx2: Roxana Aanei, Nuria Diaz, Veronica Tornero and Irene Bandera.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,11 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-// IMPORTANT NOTE:
-// Please have your LGPTD-Plan package in your $HOME directory.
-// Else, you'll have to change the path written in system method 
-// (line 64 and 130).
 
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -61,7 +56,7 @@ LPGTDPlanSolver::getPlan(
   problem_out.close();
 
   system(
-    ("$HOME/LPGTD-Plan/lpgtd -o /tmp/" + node_namespace + "/domain.pddl -f /tmp/" +
+    ("$LPGTD -o /tmp/" + node_namespace + "/domain.pddl -f /tmp/" +
     node_namespace + "/problem.pddl -speed -noout > /tmp/" + node_namespace + "/plan").c_str());
 
   std::string line;
@@ -127,7 +122,7 @@ LPGTDPlanSolver::check_domain(
   problem_out.close();
 
   system(
-    ("$HOME/LPGTD-Plan/lpgtd -o /tmp/" + node_namespace + "/check_domain.pddl -f /tmp/" +
+    ("$LPGTD-o /tmp/" + node_namespace + "/check_domain.pddl -f /tmp/" +
     node_namespace + "/check_problem.pddl -speed -noout > /tmp/" + node_namespace + "/check.out").c_str());
 
   std::ifstream plan_file("/tmp/" + node_namespace + "/check.out");

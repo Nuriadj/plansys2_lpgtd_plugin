@@ -66,15 +66,11 @@ LPGTDPlanSolver::getPlan(
 
   if (plan_file.is_open()) {
     while ((getline(plan_file, line)) && (done == false)) {
-      if (!solution) {
+      if (!solution) {                  // if there is no solution yet
         if (line.find("Time: (ACTION)") != std::string::npos) {
           solution = true;
         }
-      } else if (line.front() != 'S') {
-        if (line.empty()) {
-          done = true;
-          break;
-        }
+      } else if (!line.empty()) {      // if the line is not empty
         PlanItem item;
         size_t colon_pos = line.find(":");
         size_t colon_par = line.find(")");
@@ -85,6 +81,11 @@ LPGTDPlanSolver::getPlan(
         std::string action = line.substr(colon_pos + 2, colon_par - colon_pos - 1);
         std::string duration = line.substr(colon_bra + 3, colon_dot - colon_bra - 3);
 
+        // change from mayus to minus
+        for (int i = 0; i < action.length(); i++) {
+          action[i] = tolower(action[i]);
+        }
+
         duration.pop_back();
 
         item.time = std::stof(time);
@@ -92,6 +93,10 @@ LPGTDPlanSolver::getPlan(
         item.duration = std::stof(duration);
 
         ret.push_back(item);
+      }
+      else if (line.empty()) {        // if the line is empty
+        done = true;
+        break;
       }
     }
     plan_file.close();

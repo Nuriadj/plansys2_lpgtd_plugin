@@ -20,6 +20,10 @@ Here you can see a little comparation between PLG-TD and POPF:
 | :disjunctive-preconditions  | Yes  | No |
 </p>
 
+More information about this planner can be found in the official web page https://lpg.unibs.it/lpg/
+
+Executable code can be found at http://chronus.ing.unibs.it/download/ in the tar file "lpgtd-linux.gz"
+
 **Now, what are the advantages of creating a new module / plugin for ros2_planning_system instead of use the planner as it is?**
 
 As I said before, in plansys2 we already have 2 modules: POPF and TFD. 
@@ -33,22 +37,20 @@ The main system waits for that file to be created, pick the information dumped i
 
 From different planners, we will have the same output structure.
 
-Also, if you are curious, we have some more planners (including this one) in `project1/planners` (https://github.com/RoxanaAN/planning_cognitive_systems/tree/main/project_1), where you can find a lot of information about their functions and how to use them separately.
-
 ## STEPS TO USE THIS PLUGGIN:
 
 ## Getting LPG-td planner:
 
-Go to your home directory ($HOME) and write in the terminal the next commands:
+Decompress `lpgtd-linux.gz` where you want to have the executable code (in your home directory, in a new folder, etc).
 
-    > echo "export LPGTD:~/bin/lpgtd >> .bashrc
-    > mkdir bin
+Go to your home directory ($HOME) and write in the terminal the next command:
 
-Clone this repository and decompress LPGTD-Plan.
+    echo "export LPGTD=[path to executable code]" >> .bashrc
 
-Enter to LPGTD-Plan and write:
 
-    cp ./lpgtd ~/bin/lpgtd
+For example, we decompress the executable file in `$HOME/LPGTD-Plan/` so our command would look like this:
+
+    echo "export LPGTD=$HOME/LPGTD-Plan/lpgtd-linux" >> .bashrc
 
 ## Creating our pluing
 
@@ -71,7 +73,7 @@ We need to import our module following the same method:
 
     `plugin: "plansys2/LPGTDPlanSolver"`
 
-Set the parameter `plan_solver_plugins` to `["PLGTD"]` to use this planner over the other ones.
+Set the parameter `plan_solver_plugins` to `["LPGTD"]` to use this planner over the other ones.
 
 Remember to compile your workspace again.
 
@@ -86,8 +88,6 @@ In another terminal run:
 Now you will see a prompt `>` waiting for your problem.
 Set all the instances, predicates and your goal.
 Run `get plan` and the solution will appear in your terminal.
-
-You can use some examples of pddl format in the directory `examples`.
 
 ----------------------------------------------------------------------
 
@@ -109,10 +109,10 @@ After typing these lines on a terminal, you should be able to use the executable
 
 ## Contributors and github users
 
-Nuria Díaz: @Nuriadj
+Nuria Díaz: [@Nuriadj](https://github.com/Nuriadj)
 
-Roxana Aanei: @RoxanaAN
+Roxana Aanei: [@RoxanaAN](https://github.com/RoxanaAN)
 
-Verónica Tornero: @Veronica274
+Verónica Tornero: [@Veronica274](https://github.com/Veronica274)
 
-Irene Bandera: @irenebm
+Irene Bandera: [@irenebm](https://github.com/irenebm)
